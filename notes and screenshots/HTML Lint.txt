@@ -1,0 +1,9 @@
+HTML Lint
+-Markup Validation Service
+-HTMT Lint
+-Prettier
+
+
+Cross browser testing
+-animation wasn't playing on some older ios 
+-slow on some older ios
