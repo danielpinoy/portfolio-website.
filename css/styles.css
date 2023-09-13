@@ -79,13 +79,6 @@ button {
     border-bottom: var(--border-bottom);
 }
 
-button:hover,
-button:focus {
-    cursor: pointer;
-    opacity: 0.7;
-    transition: color var(--transition-duration), background-color 0.6s;
-}
-
 div {
     padding: 20px;
     margin: 5px;
@@ -93,7 +86,7 @@ div {
 
 /* HEADER */
 
-.navigation-list_item-active {
+.navigation-list-item-active {
     text-decoration: none;
 }
 
@@ -108,7 +101,7 @@ div {
     margin-left: var(--grid-gap);
 }
 
-.page-header_item:last-child {
+.page-header-item:last-child {
     flex-grow: 1;
     text-align: right;
 }
@@ -124,6 +117,7 @@ div {
     white-space: nowrap;
     border: 0;
 }
+
 /* HOME */
 
 .home {
@@ -134,11 +128,12 @@ div {
 
 .profile {
     max-width: 700px;
+
     /* centers the box */
     margin: 0 auto;
 }
 
-.profile_portrait {
+.profile-portrait {
     float: left;
     width: 250px;
     margin-right: var(--grid-gap);
@@ -150,11 +145,11 @@ div {
     margin: 0;
     padding: 0;
     display: flex;
-
     flex-direction: column;
     align-items: start;
     font-size: 1.8rem;
 }
+
 .form-button {
     margin-top: 3px;
     display: inline-block;
@@ -163,12 +158,13 @@ div {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    color: #ffffff;
+    color: #fff;
     background-color: #7a7a7a;
     text-align: center;
     text-decoration: none;
 }
-.button_secondary {
+
+.button-secondary {
     background-color: var(--secondary-button-background-color);
     color: var(--button-text-color);
 }
@@ -182,8 +178,9 @@ div {
 .button,
 button {
     /* overwrites browser defaults */
+
     /* resets the border */
-    border: none;
+
     display: inline-block;
     font-size: 1.2rem;
     text-decoration: none;
@@ -201,18 +198,21 @@ button:focus,
 .button:focus {
     /* lets the mouse appear as a hand when hovering over the button */
     cursor: pointer;
+    opacity: 0.7;
+    transition: color var(--transition-duration), background-color 0.6s;
+
     /* reduces the opacity of the button to 80% */
     color: var(--footer-background-color);
     background-color: var(--dark);
 }
 
-.about_me {
+.about-me {
     max-width: 900px;
     margin: 0 auto;
     text-align: center;
 }
 
-.about_p:nth-child(2) {
+.about-p:nth-child(2) {
     margin-bottom: var(--grid-gap);
 }
 
@@ -228,16 +228,16 @@ button:focus,
     grid-gap: var(--grid-gap);
 }
 
-.grid_item {
+.grid-item {
     background-color: var(--grid-item-background-color);
     width: auto;
 }
 
-.grid_item:nth-child(5) {
+.grid-item:nth-child(5) {
     grid-column: 1/4;
 }
 
-.grid_item:nth-child(6) {
+.grid-item:nth-child(6) {
     grid-row: 1/4;
     grid-column: 3;
 }
@@ -254,18 +254,16 @@ button:focus,
     width: 5%;
 }
 
-/* ******************* */
 /* ******Queries****** */
-/* ******************* */
 
-@media all and (max-width: 500px) {
+@media all and (width <= 500px) {
     .grid {
         grid-template-columns: 1fr;
         grid-gap: var(--grid-gap);
     }
 }
 
-@media all and (min-width: 500px) and (max-width: 750px) {
+@media all and (width >= 500px) and (width <= 750px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: var(--grid-gap);
@@ -273,9 +271,9 @@ button:focus,
 }
 
 /* shared properties */
-@media all and (max-width: 750px) {
-    .grid_item:nth-child(5),
-    .grid_item:nth-child(6) {
+@media all and (width <= 750px) {
+    .grid-item:nth-child(5),
+    .grid-item:nth-child(6) {
         grid-column: auto / auto;
         grid-row: auto / auto;
     }
@@ -290,9 +288,11 @@ button:focus,
     0% {
         fill: #fff;
     }
+
     50% {
         fill: #edc655;
     }
+
     100% {
         fill: #ecb718;
     }
@@ -302,6 +302,7 @@ button:focus,
     from {
         transform: translate(0, 50px);
     }
+
     to {
         transform: translate(200px, 50px);
     }
@@ -311,6 +312,6 @@ button:focus,
     animation: headlights var(--animation-duration) infinite alternate linear;
 }
 
-.Vehicle {
+.vehicle {
     animation: forward 42s linear infinite;
 }
