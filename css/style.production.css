@@ -5,6 +5,28 @@
 * Browsers: last 4 version
 */
 
+:root {
+    --dark: #000;
+    --primary-text-color: #333333;
+    --hyperlink-hover-color: #357b70;
+    --hyperlink-visited-color: #05676e;
+    --hyperlink-active-color: #691bc3;
+    --button-background-color: #4681f4;
+    --button-text-color: #2b2b2b;
+    --secondary-button-background-color: #98b70c;
+    --grid-item-background-color: #d3d3d3;
+    --footer-background-color: #f0f0f0;
+    --font-family-monospace: "Inconsolata", monospace;
+    --font-family-sans-serif: "Lato", sans-serif;
+    --font-size-default: 1.6rem;
+    --font-weight-bold: 700;
+    --border-radius: 3px;
+    --grid-gap: 20px;
+    --border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    --transition-duration: 1s;
+    --animation-duration: 3s;
+}
+
 /* Resetting the default style */
 * {
     margin: 0;
@@ -14,29 +36,29 @@
 }
 
 body {
-    font-family: "Inconsolata", monospace, "Lato", sans-serif;
-    font-size: 1.6rem;
+    font-family: var(--font-family-monospace), var(--font-family-sans-serif);
+    font-size: var(--font-size-default);
     line-height: 1.6;
-    color: #333333;
+    color: var(--primary-text-color);
 }
 
 h1 {
     font-size: 2.6rem;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
 }
 
 h2 {
     font-size: 2.2rem;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
 }
 
 h3 {
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: var(--font-weight-bold);
 }
 
 a {
-    color: #357b70;
+    color: var(--hyperlink-hover-color);
 }
 
 a:hover,
@@ -45,11 +67,11 @@ a:focus {
 }
 
 a:visited {
-    color: #05676e;
+    color: var(--hyperlink-visited-color);
 }
 
 a:active {
-    color: #691bc3;
+    color: var(--hyperlink-active-color);
 }
 
 button {
@@ -57,28 +79,21 @@ button {
     font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
-    background-color: #4681f4;
-    color: #2b2b2b;
+    background-color: var(--button-background-color);
+    color: var(--button-text-color);
     text-decoration: none;
     padding: 10px;
-    border-radius: 3px;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    border-bottom: var(--border-bottom);
 }
 
-button:hover {
-    cursor: pointer;
-    opacity: 0.7;
-    -webkit-transition: color 1s, background-color 0.6s;
-    -o-transition: color 1s, background-color 0.6s;
-    transition: color 1s, background-color 0.6s;
-}
-
+button:hover,
 button:focus {
     cursor: pointer;
     opacity: 0.7;
-    -webkit-transition: color 1s, background-color 0.6s;
-    -o-transition: color 1s, background-color 0.6s;
-    transition: color 1s, background-color 0.6s;
+    -webkit-transition: color var(--transition-duration), background-color 0.6s;
+    -o-transition: color var(--transition-duration), background-color 0.6s;
+    transition: color var(--transition-duration), background-color 0.6s;
 }
 
 div {
@@ -101,7 +116,7 @@ div {
 
 .navigation-list li {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: var(--grid-gap);
 }
 
 .page-header__item:last-child {
@@ -111,10 +126,21 @@ div {
     text-align: right;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 /* HOME */
 
 .home {
-    border: 5px solid #000;
+    border: 5px solid var(--dark);
     height: 450px;
     border-radius: 50px;
 }
@@ -128,14 +154,46 @@ div {
 .profile__portrait {
     float: left;
     width: 250px;
-    margin-right: 20px;
+    margin-right: var(--grid-gap);
     border-radius: 50%;
 }
 
 /* CONTACT */
+#contact-form {
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-box-direction: normal;
+
+    -ms-flex-direction: column;
+
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: start;
+    font-size: 1.8rem;
+}
+.form-button {
+    margin-top: 3px;
+    display: inline-block;
+    padding: 8px 18px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #7a7a7a;
+    text-align: center;
+    text-decoration: none;
+}
 .button__secondary {
-    background-color: #98b70c;
-    color: #2b2b2b;
+    background-color: var(--secondary-button-background-color);
+    color: var(--button-text-color);
 }
 
 .table-number {
@@ -144,23 +202,7 @@ div {
 
 /* ABOUT */
 
-.button {
-    /* overwrites browser defaults */
-    /* resets the border */
-    border: none;
-    display: inline-block;
-    font-size: 1.2rem;
-    text-decoration: none;
-    padding: 4px;
-    margin-top: 10px;
-    border: 3px solid #000;
-    font-weight: 700;
-    -webkit-transition: color 1s, background-color 0.6s;
-    -o-transition: color 1s, background-color 0.6s;
-    transition: color 1s, background-color 0.6s;
-    color: #000;
-}
-
+.button,
 button {
     /* overwrites browser defaults */
     /* resets the border */
@@ -170,44 +212,23 @@ button {
     text-decoration: none;
     padding: 4px;
     margin-top: 10px;
-    border: 3px solid #000;
-    font-weight: 700;
-    -webkit-transition: color 1s, background-color 0.6s;
-    -o-transition: color 1s, background-color 0.6s;
-    transition: color 1s, background-color 0.6s;
-    color: #000;
+    border: 3px solid var(--dark);
+    font-weight: var(--font-weight-bold);
+    -webkit-transition: color var(--transition-duration), background-color 0.6s;
+    -o-transition: color var(--transition-duration), background-color 0.6s;
+    transition: color var(--transition-duration), background-color 0.6s;
+    color: var(--dark);
 }
 
-button:hover {
-    /* lets the mouse appear as a hand when hovering over the button */
-    cursor: pointer;
-    /* reduces the opacity of the button to 80% */
-    color: #05676e;
-    background-color: #000;
-}
-
-button:focus {
-    /* lets the mouse appear as a hand when hovering over the button */
-    cursor: pointer;
-    /* reduces the opacity of the button to 80% */
-    color: #05676e;
-    background-color: #000;
-}
-
-.button:hover {
-    /* lets the mouse appear as a hand when hovering over the button */
-    cursor: pointer;
-    /* reduces the opacity of the button to 80% */
-    color: #05676e;
-    background-color: #000;
-}
-
+button:hover,
+button:focus,
+.button:hover,
 .button:focus {
     /* lets the mouse appear as a hand when hovering over the button */
     cursor: pointer;
     /* reduces the opacity of the button to 80% */
-    color: #05676e;
-    background-color: #000;
+    color: var(--footer-background-color);
+    background-color: var(--dark);
 }
 
 .about_me {
@@ -217,7 +238,7 @@ button:focus {
 }
 
 .about_p:nth-child(2) {
-    margin-bottom: 20px;
+    margin-bottom: var(--grid-gap);
 }
 
 .dev {
@@ -229,13 +250,13 @@ button:focus {
 .grid {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+    -ms-grid-columns: 1fr var(--grid-gap) 1fr var(--grid-gap) 1fr;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: var(--grid-gap);
 }
 
 .grid__item {
-    background-color: #d3d3d3;
+    background-color: var(--grid-item-background-color);
     width: auto;
 }
 
@@ -259,10 +280,10 @@ button:focus {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    background-color: #f0f0f0;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    background-color: var(--footer-background-color);
 }
 
 .img-icon {
@@ -277,15 +298,15 @@ button:focus {
     .grid {
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-        grid-gap: 20px;
+        grid-gap: var(--grid-gap);
     }
 }
 
 @media all and (min-width: 500px) and (max-width: 750px) {
     .grid {
-        -ms-grid-columns: 1fr 20px 1fr;
+        -ms-grid-columns: 1fr var(--grid-gap) 1fr;
         grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
+        grid-gap: var(--grid-gap);
     }
 }
 
@@ -349,8 +370,8 @@ button:focus {
 }
 
 .jeepney {
-    -webkit-animation: headlights 3s infinite alternate linear;
-    animation: headlights 3s infinite alternate linear;
+    -webkit-animation: headlights var(--animation-duration) infinite alternate linear;
+    animation: headlights var(--animation-duration) infinite alternate linear;
 }
 
 .Vehicle {
