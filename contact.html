@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="css/style.production.css" />
+        <link rel="stylesheet" href="css/styles.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="icon" href="img/steam.svg" type="image/svg+xml" />
@@ -62,28 +62,29 @@
         </header>
         <main>
             <div>
-                <br />
-                <a href="tel:+12063428631">Call us at (206) 342-8631</a>
+                <form action="/" method="post" id="contact-form">
+                    <label class="standard-label" for="contact-email">E-mail: </label>
+                    <input type="email" id="contact-email" required />
 
-                <br />
-                <a href="mailto:almirante.danieljohn@gmail.com">Email me</a>
+                    <label class="standard-label" for="contact-number">Telephone: </label>
+                    <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" id="contact-number" />
+
+                    <label class="standard-label" for="contact-message">Message: </label>
+                    <textarea maxlength="240" id="contact-message" required></textarea>
+
+                    <input type="submit" value="Submit" class="form-button" />
+                </form>
+                <div>
+                    <br />
+                    <a href="tel:+12063428631">Call us at (206) 342-8631</a>
+
+                    <br />
+                    <a href="mailto:almirante.danieljohn@gmail.com">Email me</a>
+                </div>
+                <a href="#">Default Link</a>
+                <button type="button">Default Button</button>
+                <button class="button__secondary">Secondary Button</button>
             </div>
-
-            <form action="/" method="post" id="contact-form">
-                <label class="standard-label" for="contact-email">E-mail: </label>
-                <input type="email" id="contact-email" required />
-
-                <label class="standard-label" for="contact-number">Telephone: </label>
-                <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" id="contact-number" />
-
-                <label class="standard-label" for="contact-message">Message: </label>
-                <textarea maxlength="240" id="contact-message" required></textarea>
-
-                <input type="submit" value="Send message" />
-            </form>
-            <a href="#">Default Link</a>
-            <button type="button">Default Button</button>
-            <button class="button__secondary">Secondary Button</button>
         </main>
         <footer class="page-footer">
             <h2>Find me on</h2>
