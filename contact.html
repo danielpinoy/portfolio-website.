@@ -44,29 +44,25 @@
             </nav>
         </header>
         <main>
-            <div>
+            <div class="contact-container">
                 <form action="/" method="post" id="contact-form">
-                    <label class="standard-label" for="contact-email">E-mail: </label>
-                    <input type="email" id="contact-email" required />
+                    <div class="form-group">
+                        <label class="form-label" for="contact-email">E-mail: </label>
+                        <input type="email" id="contact-email" required />
+                    </div>
 
-                    <label class="standard-label" for="contact-number">Telephone: </label>
-                    <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" id="contact-number" />
+                    <div class="form-group">
+                        <label class="form-label" for="contact-number">Telephone: </label>
+                        <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" id="contact-number" />
+                    </div>
 
-                    <label class="standard-label" for="contact-message">Message: </label>
-                    <textarea maxlength="240" id="contact-message" required></textarea>
+                    <div class="form-group">
+                        <label class="form-label" for="contact-message">Message: </label>
+                        <textarea maxlength="240" id="contact-message" required></textarea>
+                    </div>
 
                     <input type="submit" value="Submit" class="form-button" />
                 </form>
-                <div>
-                    <br />
-                    <a href="tel:+12063428631">Call us at (206) 342-8631</a>
-
-                    <br />
-                    <a href="mailto:almirante.danieljohn@gmail.com">Email me</a>
-                </div>
-                <a href="#">Default Link</a>
-                <button type="button">Default Button</button>
-                <button class="button-secondary">Secondary Button</button>
             </div>
         </main>
         <footer class="page-footer">
