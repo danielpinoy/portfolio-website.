@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/style.production.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link rel="icon" href="img/steam.svg" type="image/svg+xml" />
@@ -21,8 +21,8 @@
                 src="img/reshot-icon-screen-FD95JY2UBK.svg"
                 alt="random person looks at tv" />
 
-            <nav>
-                <ul role="menu">
+            <nav aria-label="Main Navigation">
+                <ul role="menubar">
                     <li role="menuitem">
                         <a href="index.html">Home <span class="sr-only">(Homepage)</span></a>
                     </li>
@@ -41,9 +41,15 @@
             </nav>
         </header>
         <main>
-            <div class="container">
-                <div class="home profile">
-                    <img src="img/meandriver.jpg" class="profile-portrait" alt="A face of a male" />
+            <section class="container">
+                <article class="home profile">
+                    <figure>
+                        <img
+                            src="img/meandriver.jpg"
+                            class="profile-portrait"
+                            alt="A face of a male" />
+                        <figcaption>Profile Picture</figcaption>
+                    </figure>
 
                     <div>
                         <p>
@@ -56,8 +62,8 @@
                             >Check out some of my code</a
                         >
                     </div>
-                </div>
-            </div>
+                </article>
+            </section>
         </main>
         <footer class="page-footer">
             <div class="page-body">

@@ -1,3 +1,4 @@
+/* Variables */
 :root {
     --dark: #000;
     --primary-text-color: #333;
@@ -20,7 +21,7 @@
     --animation-duration: 3s;
 }
 
-/* Resetting the default style */
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -71,8 +72,7 @@ div {
     margin: 5px;
 }
 
-/* HEADER */
-
+/* Header Styles */
 header {
     display: flex;
     justify-content: space-between;
@@ -113,8 +113,7 @@ nav ul li a {
     border: 0;
 }
 
-/* HOME */
-
+/* Home Styles */
 .container {
     display: flex;
     justify-content: center;
@@ -131,7 +130,7 @@ nav ul li a {
     gap: 20px;
     align-items: center;
     transition: box-shadow 0.3s ease;
-    animation: shadowAnimation 1s infinite alternate; /* Apply animation on hover */
+    animation: shadow-animation 1s infinite alternate;
 }
 
 .profile-portrait {
@@ -141,8 +140,7 @@ nav ul li a {
     border-radius: 50%;
 }
 
-/* CONTACT */
-
+/* Contact Styles */
 .contact-container {
     background-color: #fff;
     border-radius: 8px;
@@ -207,12 +205,9 @@ textarea {
     color: #0056b3;
 }
 
-/* ABOUT */
-
+/* About Styles */
 .button,
 button {
-    /* overwrites browser defaults */
-
     display: inline-block;
     font-size: 1.2rem;
     text-decoration: none;
@@ -249,8 +244,15 @@ button:focus,
     list-style: none;
 }
 
-/* WORK */
+.jeepney {
+    animation: headlights var(--animation-duration) infinite alternate linear;
+}
 
+.vehicle {
+    animation: forward 42s linear infinite;
+}
+
+/* Work Styles */
 .work-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -271,10 +273,15 @@ button:focus,
 }
 
 .grid-item.hidden {
-    display: none; /* Hide non-selected items */
+    display: none;
 }
 
 .grid-item p {
+    display: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.grid-item li {
     display: none;
 }
 
@@ -282,17 +289,20 @@ button:focus,
     display: block;
 }
 
-.grid-item:nth-child(5) {
+.grid-item .visible {
+    display: block;
+}
+
+.chat {
     grid-column: 1/4;
 }
 
-.grid-item:nth-child(6) {
+.todo {
     grid-row: 1/4;
     grid-column: 3;
 }
 
-/* FOOTER */
-
+/* Footer Styles */
 .page-footer {
     position: fixed;
     bottom: 0;
@@ -317,8 +327,7 @@ button:focus,
     filter: invert(100%);
 }
 
-/* ******Queries****** */
-
+/* Media Queries */
 @media all and (width <= 500px) {
     .work-grid {
         grid-template-columns: 1fr;
@@ -333,7 +342,6 @@ button:focus,
     }
 }
 
-/* shared properties */
 @media all and (width <= 750px) {
     .grid-item:nth-child(5),
     .grid-item:nth-child(6) {
@@ -346,16 +354,26 @@ button:focus,
     }
 }
 
-/* ANIMATION */
+/* Animations */
+
+/* stylelint-disable rule-empty-line-before */
+
+@keyframes shadow-animation {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+}
+
 @keyframes headlights {
     0% {
         fill: #fff;
     }
-
     50% {
         fill: #edc655;
     }
-
     100% {
         fill: #ecb718;
     }
@@ -365,18 +383,9 @@ button:focus,
     from {
         transform: translate(0, 50px);
     }
-
     to {
         transform: translate(200px, 50px);
     }
 }
 
-/* HOME PROFILE */
-
-.jeepney {
-    animation: headlights var(--animation-duration) infinite alternate linear;
-}
-
-.vehicle {
-    animation: forward 42s linear infinite;
-}
+/* stylelint-enable rule-empty-line-before */
