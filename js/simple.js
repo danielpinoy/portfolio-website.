@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const paragraph = this.querySelector("p");
             const bulletPoints = this.querySelectorAll("li");
+            const gridLeft = this.querySelector(".grid-left");
+            const gridRight = this.querySelector(".grid-right");
 
             if (paragraph) {
                 paragraph.classList.toggle("visible");
@@ -19,6 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     : "none";
             });
 
+            // Toggle grid-left and grid-right elements
+            if (gridLeft && gridRight) {
+                console.log("ge");
+                gridLeft.classList.toggle("visible");
+                gridRight.classList.toggle("visible");
+
+                // Add a new class
+                gridLeft.classList.toggle("left-items");
+                gridRight.classList.toggle("right-items");
+            }
+
             // Toggle hidden class for all grid items except the clicked one
             gridItems.forEach((gridItem) => {
                 if (gridItem !== item) {
@@ -30,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             });
-            // toggle remove chat and todo class
+
+            // Toggle remove chat and todo class
             gridItems.forEach(function (gridItem) {
                 if (gridItem !== item && gridItem.classList.contains("selected")) {
                     gridItem.classList.remove("chat", "todo");

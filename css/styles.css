@@ -51,7 +51,9 @@ h3 {
 }
 
 a {
-    color: var(--hyperlink-hover-color);
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
 }
 
 button {
@@ -99,6 +101,10 @@ nav ul li:last-child {
 nav ul li a {
     color: var(--dark);
     text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
 }
 
 .sr-only {
@@ -280,13 +286,14 @@ button:focus,
     display: none;
 }
 
+.left-items,
+.right-items {
+    padding: 20px 20px 2px;
+}
+
 /* stylelint-disable-next-line no-descending-specificity */
 .grid-item li {
     display: none;
-}
-
-.grid-item .visible {
-    display: block;
 }
 
 .grid-item .visible {
@@ -300,6 +307,31 @@ button:focus,
 .todo {
     grid-row: 1/4;
     grid-column: 3;
+}
+
+.grid-left,
+.grid-right {
+    display: none;
+}
+
+.grid-left.visible,
+.grid-right.visible {
+    display: block;
+    background-color: var(--grid-item-background-color);
+    height: 267px;
+    width: 250px;
+}
+
+.grid-left.visible {
+    position: absolute;
+    left: 10%;
+    bottom: 46%;
+}
+
+.grid-right.visible {
+    position: absolute;
+    right: 10%;
+    bottom: 46%;
 }
 
 /* Footer Styles */
