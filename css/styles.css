@@ -318,20 +318,20 @@ button:focus,
 .grid-right.visible {
     display: block;
     background-color: var(--grid-item-background-color);
-    height: 267px;
+    height: 400px;
     width: 250px;
 }
 
 .grid-left.visible {
     position: absolute;
     left: 10%;
-    bottom: 46%;
+    bottom: 28%;
 }
 
 .grid-right.visible {
     position: absolute;
     right: 10%;
-    bottom: 46%;
+    bottom: 28%;
 }
 
 /* Footer Styles */
