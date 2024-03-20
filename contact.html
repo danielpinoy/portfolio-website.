@@ -14,75 +14,42 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Lato:ital,wght@1,300&display=swap"
             rel="stylesheet" />
-        <title>Contact Daniel John</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <title>Contact</title>
     </head>
     <body>
-        <header>
-            <!-- Logo -->
-            <img
-                style="height: 80px"
-                src="img/reshot-icon-screen-FD95JY2UBK.svg"
-                alt="random person looks at tv" />
-
-            <nav>
-                <ul role="menu">
-                    <li role="menuitem">
-                        <a href="index.html">Home <span class="sr-only">(Homepage)</span></a>
-                    </li>
-                    <li role="menuitem">
-                        <a href="about.html"> About <span class="sr-only">(About Us)</span> </a>
-                    </li>
-                    <li role="menuitem">
-                        <a href="contact.html"
-                            >Contact <span class="sr-only">(Our Contacts)</span></a
-                        >
-                    </li>
-                    <li role="menuitem">
-                        <a href="work.html"> Work <span class="sr-only">(Our Work)</span></a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <div class="toggle">
+            <a><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <img
+                        style="height: 80px"
+                        src="img/reshot-icon-screen-FD95JY2UBK.svg"
+                        alt="random person looks at tv" />
+                </li>
+                <li><a class="menu-item" href="index.html">Home</a></li>
+                <li><a class="menu-item" href="about.html">About</a></li>
+                <li><a class="menu-item" href="work.html">Portfolio</a></li>
+                <li><a class="menu-item" href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
         <main>
             <div class="contact-container">
-                <form action="/" method="post" id="contact-form">
-                    <div class="form-group">
-                        <label class="form-label" for="contact-email">E-mail: </label>
-                        <input type="email" id="contact-email" required />
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="contact-number">Telephone: </label>
-                        <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" id="contact-number" />
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="contact-message">Message: </label>
-                        <textarea maxlength="240" id="contact-message" required></textarea>
-                    </div>
-
-                    <input type="submit" value="Submit" class="form-button" />
-                </form>
+                <h2>Find me</h2>
+                <a href="https://www.facebook.com/daniel.almirante" class="find-me">Facebook</a>
+                <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=almirante.danieljohn@gmail.com"
+                    class="find-me"
+                    >Gmail</a
+                >
             </div>
         </main>
-        <footer class="page-footer">
-            <div class="page-body">
-                <div class="social-media">
-                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
-                        ><img src="img/facebook-logo-2163.svg" alt="Facebook icon" class="img-icon"
-                    /></a>
-                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
-                        ><img
-                            src="img/twitter-x-logo-black-round-20851.svg"
-                            alt="x/Twitter icon"
-                            class="img-icon"
-                    /></a>
-                    <a href="https://gmail.com/" target="_blank" rel="noopener noreferrer"
-                        ><img src="img/mail-2569.svg" alt="gmail icon" class="img-icon"
-                    /></a>
-                </div>
-            </div>
-        </footer>
+
         <script src="js/tota11y.min.js"></script>
+        <script src="js/simple.minified.js"></script>
     </body>
 </html>

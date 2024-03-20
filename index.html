@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,35 +12,29 @@
         <link
             href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Lato:ital,wght@1,300&display=swap"
             rel="stylesheet" />
-        <title>Home Daniel John</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <title>Home</title>
     </head>
     <body>
-        <header>
-            <!-- Logo -->
-            <img
-                style="height: 80px"
-                src="img/reshot-icon-screen-FD95JY2UBK.svg"
-                alt="random person looks at tv" />
-
-            <nav aria-label="Main Navigation">
-                <ul role="menubar">
-                    <li role="menuitem">
-                        <a href="index.html">Home <span class="sr-only">(Homepage)</span></a>
-                    </li>
-                    <li role="menuitem">
-                        <a href="about.html"> About <span class="sr-only">(About Us)</span> </a>
-                    </li>
-                    <li role="menuitem">
-                        <a href="contact.html"
-                            >Contact <span class="sr-only">(Our Contacts)</span></a
-                        >
-                    </li>
-                    <li role="menuitem">
-                        <a href="work.html"> Work <span class="sr-only">(Our Work)</span></a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <div class="toggle">
+            <a><i class="fa fa-bars"></i></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <img
+                        style="height: 80px"
+                        src="img/reshot-icon-screen-FD95JY2UBK.svg"
+                        alt="random person looks at tv" />
+                </li>
+                <li><a class="menu-item" href="index.html">Home</a></li>
+                <li><a class="menu-item" href="about.html">About</a></li>
+                <li><a class="menu-item" href="work.html">Portfolio</a></li>
+                <li><a class="menu-item" href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
         <main>
             <section class="container">
                 <article class="home profile">
@@ -48,7 +43,6 @@
                             src="img/meandriver.jpg"
                             class="profile-portrait"
                             alt="A face of a male" />
-                        <figcaption>Profile Picture</figcaption>
                     </figure>
 
                     <div>
@@ -57,10 +51,6 @@
                             <span>web</span> developer from the Philippines.
                         </p>
                         <p>Loves games and sports.</p>
-
-                        <a href="https://codepen.io/Altuism/pen/zYyKVNd" target="_blank"
-                            >Check out some of my code</a
-                        >
                     </div>
                 </article>
             </section>
@@ -84,5 +74,6 @@
             </div>
         </footer>
         <script src="js/tota11y.min.js"></script>
+        <script src="js/simple.minified.js"></script>
     </body>
 </html>
