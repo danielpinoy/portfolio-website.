@@ -1,3 +1,18 @@
+const profile = document.querySelector(".profile");
+const fadeIns = document.querySelectorAll(".profile .fade-in");
+
+profile.addEventListener("mouseenter", () => {
+    fadeIns.forEach((el) => {
+        el.style.transition = "opacity 0.5s ease-in-out 0.3s";
+    });
+});
+
+profile.addEventListener("mouseleave", () => {
+    fadeIns.forEach((el) => {
+        el.style.transition = "opacity 0s";
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     // Click event listener for grid items
     const gridItems = document.querySelectorAll(".grid-item");
