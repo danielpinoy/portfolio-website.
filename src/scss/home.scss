@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .profile-portrait {
+        float: left;
+        width: 250px;
+        border-radius: 50%;
+    }
+
+    .profile {
+        border: 5px solid #000;
+        border-radius: 50px;
+        max-width: 260px;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+// small phone
+@media (width <= 450px) {
+    .container {
+        .profile-portrait {
+            width: 200px;
+        }
+        .profile {
+            max-width: 250px !important;
+            height: 320px !important;
+            transition: height 0.5s ease-in-out;
+        }
+        .profile:hover {
+            height: 500px !important;
+        }
+    }
+}
+
+@media (width <= 600px) {
+    .container {
+        .profile {
+            max-width: 500px;
+            height: 400px;
+            grid-template-columns: 1fr;
+            // justify-items: center;
+            padding: 20px;
+            max-width: 300px;
+            transition: height 0.5s ease-in-out;
+
+            .fade-in {
+                transition: none;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out 0.3s;
+            }
+        }
+        .profile:hover {
+            height: 500px;
+            .fade-in {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+@media (width >= 600px) {
+    .container {
+        .profile {
+            height: 450px;
+            transition: max-width 0.5s ease-in-out;
+
+            .fade-in {
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out 0.3s;
+            }
+        }
+
+        .profile:hover {
+            // I want this to not work in 600px screen
+
+            max-width: 700px;
+            .fade-in {
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+.about-me {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-me .about-p:nth-child(2) {
+    margin-bottom: 2px;
+}
+
+.about-me .dev {
+    list-style: none;
+}
+
+.jeepney-container {
+    margin-top: 200px;
+}
+
+.jeepney-container .jeepney {
+    animation: headlights 3s infinite alternate linear;
+}
+
+.jeepney-container .vehicle {
+    animation: forward 42s linear infinite;
+}
+
+@keyframes forward {
+    from {
+        transform: translate(0, 50px);
+    }
+
+    to {
+        transform: translate(200px, 50px);
+    }
+}
+
+/*# sourceMappingURL=about.css.map */

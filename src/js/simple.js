@@ -1,6 +1,7 @@
 const profile = document.querySelector(".profile");
 const fadeIns = document.querySelectorAll(".profile .fade-in");
 
+// HOME PAGE
 profile.addEventListener("mouseenter", () => {
     fadeIns.forEach((el) => {
         el.style.transition = "opacity 0.5s ease-in-out 0.3s";
@@ -13,6 +14,7 @@ profile.addEventListener("mouseleave", () => {
     });
 });
 
+// WORK PAGE
 document.addEventListener("DOMContentLoaded", function () {
     // Click event listener for grid items
     const gridItems = document.querySelectorAll(".grid-item");
@@ -29,12 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
 function toggleGridItem() {
     this.classList.toggle("selected");
 
+    this.classList.toggle("grid-mode");
+
     const paragraph = this.querySelector("p");
     const bulletPoints = this.querySelectorAll("li");
     const gridImageContainer = this.querySelector(".grid-image-container");
     const gridLeft = this.querySelector(".grid-left");
     const gridRight = this.querySelector(".grid-right");
-
     toggleVisibility(paragraph);
     toggleVisibility(gridImageContainer);
 
@@ -62,6 +65,11 @@ function toggleGridItem() {
             }
         }
     });
+
+    // Target the .work-grid element
+    const workGrid = document.querySelector(".work-grid");
+
+    workGrid.classList.toggle("block-mode");
 }
 
 function toggleMenu() {

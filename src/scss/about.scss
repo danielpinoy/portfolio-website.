@@ -1,0 +1,23 @@
+.about-me {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    .about-p:nth-child(2) {
+        margin-bottom: 2px;
+    }
+    .dev {
+        list-style: none;
+    }
+}
+
+.jeepney-container {
+    margin-top: 200px;
+
+    .jeepney {
+        animation: headlights 3s infinite alternate linear;
+    }
+
+    .vehicle {
+        animation: forward 42s linear infinite;
+    }
+}

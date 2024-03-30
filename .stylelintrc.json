@@ -1,4 +1,4 @@
 {
     "extends": "stylelint-config-standard-scss",
-    "ignoreFiles": ["css/style.production.css", " css/styles.css"]
+    "ignoreFiles": ["src/css/style.production.css", " src/css/styles.css"]
 }

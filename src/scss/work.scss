@@ -1,0 +1,143 @@
+$grid-gap: 20px;
+
+.work-grid {
+    display: grid;
+    grid-gap: $grid-gap;
+    margin-bottom: 200px;
+
+    &.block-mode {
+        display: block;
+    }
+
+    .grid-item {
+        padding: 20px;
+        width: auto;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        background-color: rgba(211, 211, 211, 0.6);
+
+        &.grid-mode {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+            gap: 20px;
+            background-color: transparent;
+        }
+
+        &:hover {
+            background-color: rgba(168, 168, 168, 0.8);
+        }
+
+        &.selected:hover {
+            background-color: inherit;
+        }
+
+        .grid-left,
+        .grid-right {
+            padding: 20px 20px 2px;
+            display: none;
+        }
+
+        .grid-details,
+        .grid-left.visible,
+        .grid-right.visible {
+            &.visible:hover {
+                background-color: rgba(168, 168, 168, 0.8);
+            }
+        }
+
+        .grid-left {
+            grid-row: 1;
+        }
+
+        .grid-details,
+        .grid-image-container {
+            grid-column: 2;
+        }
+
+        &.hidden {
+            display: none;
+        }
+
+        p,
+        li {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+    } // End .grid-item
+
+    .chat {
+        grid-column: 1 / 4;
+    }
+
+    .todo {
+        grid-row: 1 / 4;
+        grid-column: 3;
+    }
+
+    .grid-image-container {
+        display: none;
+    }
+
+    .grid-image {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+// QUERIES
+
+// small phone
+@media (width <= 450px) {
+    body {
+        background-color: rgb(197, 18, 18);
+    }
+    .work-grid {
+        .chat {
+            grid-column: 1;
+        }
+
+        .todo {
+            grid-column: 1;
+        }
+        .grid-item {
+            &.grid-mode {
+                grid-template-columns: 2fr;
+                align-content: start;
+            }
+
+            .grid-left,
+            .grid-right {
+                padding: 2px;
+            }
+            .grid-details {
+                .grid-left.visible {
+                    display: none !important;
+                }
+                .grid-right.visible {
+                    height: 100px;
+                    width: 250px;
+                    position: absolute;
+                    right: 17%;
+                    bottom: 10%;
+                }
+            }
+        }
+    }
+}
+
+// medium screens (ipad and smaller laptop)
+@media (width >= 451px) and (width <= 767px) {
+    .work-grid {
+        .chat {
+            grid-column: 1;
+        }
+
+        .todo {
+            grid-column: 1;
+        }
+    }
+}
